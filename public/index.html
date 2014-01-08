@@ -13,29 +13,34 @@
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
-    <header id="header">
-        <h1 id="title">Bootscapp</h1>
-        <img id="logo" src="">
-    </header>
-    <nav class="menu sel_list">
-        <a href="#" class="list">List</a>
-        <a href="#" class="products">X</a>
-        <a href="#" class="profile">X</a>
-    </nav>
-    <nav class="menu sel_products">
-        <a href="#" class="list">X</a>
-        <a href="#" class="products">Products</a>
-        <a href="#" class="profile">X</a>
-    </nav>
-    <nav class="menu sel_profile">
-        <a href="#" class="list">X</a>
-        <a href="#" class="products">X</a>
-        <a href="#" class="profile">Profile</a>
-    </nav>
-    <section id="content"> <!-- ng-view -->
-        <article>
-            test
-        </article>
-    </section>
+    <div id="main"> <!-- ng-view -->
+        <nav id="menu">
+            <a href="#">Boodschappen</a>
+            <a href="#">Likkepot</a>
+            <a href="#">Snackbar</a>
+        </nav>
+        <section id="content">
+            <header>
+                <a href="#" class="menu_toggle">-</a>
+                Bootscapp
+                <a href="#" class="aside_toggle">-</a>
+            </header>
+            <nav>
+                <a href="#" class="toggle"><i>t</i></a>
+                <a href="#" class="main"><i>+</i> Item toevoegen</a>
+                <a href="#"><i>x</i> Afgevinkte items verwijderen</a>
+            </nav>
+            <article>
+                TODO: boodschappenlijst
+            </article>
+        </section>
+        <aside id="user">
+            <img src="">
+            <span>Sander Verkuijlen</span>
+            <ul>
+                <li></li>
+            </ul>
+        </aside>
+    </div>
 </body>
 </html>
