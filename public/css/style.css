@@ -1437,8 +1437,3 @@ a {
     background: rgba(0, 0, 0, 0.2); }
 
 /*TEMP*/
-body {
-  background: #333333; }
-  body #main {
-    max-width: 320px;
-    margin: 0 auto; }
