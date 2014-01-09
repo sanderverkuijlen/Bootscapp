@@ -4,7 +4,8 @@
 
 $layout_unit: 20px;
 
-$menu_overlap: 85%;
+$sideview_overlap: 85%;
+$sideview_transition: 0.5s ease-out;
 
 //Global styles
 *{
@@ -30,13 +31,13 @@ a{
 
   #menu{
     position: absolute;
-    width: $menu_overlap;
+    width: $sideview_overlap;
     height: 100%;
     top: 0;
-    left: -$menu_overlap;
+    left: -$sideview_overlap;
     background: #0B416E;
     color: #FFFFFF;
-    transition: left 1s ease-out;
+    transition: left $sideview_transition;
 
     a{
       display: block;
@@ -49,7 +50,7 @@ a{
     height: 100%;
     width: 100%;
     padding-top: $layout_unit*4;
-    transition: left 1s ease-out, right 1s ease-out;
+    transition: left $sideview_transition, right $sideview_transition;
 
     header{
       margin-top: -$layout_unit*4;
@@ -95,13 +96,13 @@ a{
 
   #user{
     position: absolute;
-    width: $menu_overlap;
+    width: $sideview_overlap;
     height: 100%;
     top: 0;
-    right: -$menu_overlap;
+    right: -$sideview_overlap;
     background: #0B416E;
     color: #FFFFFF;
-    transition: right 1s ease-out;
+    transition: right $sideview_transition;
 
     a{
       display: block;
@@ -110,12 +111,15 @@ a{
   }
 
   #overlay{
-    display: none;
+    display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    transition: left 1s ease-out, right 1s ease-out;
-    background: rgba(0,0,0,0.2);
+    top: 100%;
+    left: 0;
+    right: 0;
+    transition: left $sideview_transition, right $sideview_transition, background $sideview_transition;
+    background: rgba(0,0,0,0);
   }
 
   &.menu{
@@ -123,11 +127,13 @@ a{
       left: 0;
     }
     #content{
-      left: $menu_overlap;
+      left: $sideview_overlap;
     }
     #overlay{
-      display: block;
-      left: $menu_overlap;
+      top: 0;
+      left: $sideview_overlap;
+      right: auto;
+      background: rgba(0,0,0,0.2);
     }
   }
 
@@ -136,11 +142,13 @@ a{
       right: 0;
     }
     #content{
-      right: $menu_overlap;
+      right: $sideview_overlap;
     }
     #overlay{
-      display: block;
-      right: $menu_overlap;
+      top: 0;
+      right: $sideview_overlap;
+      left: auto;
+      background: rgba(0,0,0,0.2);
     }
   }
 }

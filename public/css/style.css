@@ -1356,7 +1356,7 @@ a {
     left: -85%;
     background: #0b416e;
     color: white;
-    transition: left 1s ease-out; }
+    transition: left 0.5s ease-out; }
     #main #menu a {
       display: block;
       color: inherit; }
@@ -1365,7 +1365,7 @@ a {
     height: 100%;
     width: 100%;
     padding-top: 80px;
-    transition: left 1s ease-out, right 1s ease-out; }
+    transition: left 0.5s ease-out, right 0.5s ease-out; }
     #main #content header {
       margin-top: -80px;
       height: 40px;
@@ -1403,31 +1403,38 @@ a {
     right: -85%;
     background: #0b416e;
     color: white;
-    transition: right 1s ease-out; }
+    transition: right 0.5s ease-out; }
     #main #user a {
       display: block;
       color: inherit; }
   #main #overlay {
-    display: none;
+    display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    transition: left 1s ease-out, right 1s ease-out;
-    background: rgba(0, 0, 0, 0.2); }
+    top: 100%;
+    left: 0;
+    right: 0;
+    transition: left 0.5s ease-out, right 0.5s ease-out, background 0.5s ease-out;
+    background: rgba(0, 0, 0, 0); }
   #main.menu #menu {
     left: 0; }
   #main.menu #content {
     left: 85%; }
   #main.menu #overlay {
-    display: block;
-    left: 85%; }
+    top: 0;
+    left: 85%;
+    right: auto;
+    background: rgba(0, 0, 0, 0.2); }
   #main.user #user {
     right: 0; }
   #main.user #content {
     right: 85%; }
   #main.user #overlay {
-    display: block;
-    right: 85%; }
+    top: 0;
+    right: 85%;
+    left: auto;
+    background: rgba(0, 0, 0, 0.2); }
 
 /*TEMP*/
 body {
