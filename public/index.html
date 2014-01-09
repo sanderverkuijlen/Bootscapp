@@ -13,22 +13,22 @@
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
-    <div id="main"> <!-- ng-view -->
+    <div id="main" class=""> <!-- ng-view -->
         <nav id="menu">
-            <a href="#">Boodschappen</a>
-            <a href="#">Likkepot</a>
-            <a href="#">Snackbar</a>
+            <a href="#">Boodschappen <i class="fa fa-angle-right"></i></a>
+            <a href="#">Likkepot <i class="fa fa-angle-right"></i></a>
+            <a href="#">Snackbar <i class="fa fa-angle-right"></i></a>
         </nav>
         <section id="content">
             <header>
-                <a href="#" class="menu_toggle">-</a>
+                <a href="#" onclick="document.getElementById('main').className = 'menu';" class="menu_toggle fa fa-bars"></a>
                 Bootscapp
-                <a href="#" class="aside_toggle">-</a>
+                <a href="#" onclick="document.getElementById('main').className = 'user';" class="user_toggle fa fa-user"></a>
             </header>
             <nav>
-                <a href="#" class="toggle"><i>t</i></a>
-                <a href="#" class="main"><i>+</i> Item toevoegen</a>
-                <a href="#"><i>x</i> Afgevinkte items verwijderen</a>
+                <a href="#" class="toggle"><i class="fa fa-angle-down"></i></a>
+                <a href="#" class="main"><i class="fa fa-plus"></i> Item toevoegen</a>
+                <a href="#"><i class="fa fa-times"></i> Afgevinkte items verwijderen</a>
             </nav>
             <article>
                 TODO: boodschappenlijst
@@ -37,10 +37,11 @@
         <aside id="user">
             <img src="">
             <span>Sander Verkuijlen</span>
-            <ul>
-                <li></li>
-            </ul>
+            <a href="#">Profiel <i class="fa fa-angle-right"></i></a>
+            <a href="#">Uitloggen <i class="fa fa-sign-out"></i></a>
         </aside>
+        <div id="overlay" onclick="document.getElementById('main').className = '';">
+        </div>
     </div>
 </body>
 </html>

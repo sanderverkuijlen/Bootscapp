@@ -1,14 +1,167 @@
 @import 'reset';
 @import 'border-box';
+@import "fontawesome/font-awesome";
 
 $layout_unit: 20px;
 
-//Global font declaration
+$menu_overlap: 85%;
+
+//Global styles
 *{
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+
 //Top-level layout
+#main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  #menu{
+    position: absolute;
+    width: $menu_overlap;
+    height: 100%;
+    top: 0;
+    left: -$menu_overlap;
+    background: #0B416E;
+    color: #FFFFFF;
+    transition: left 1s ease-out;
+
+    a{
+      display: block;
+      color: inherit;
+    }
+  }
+
+  #content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-top: $layout_unit*4;
+    transition: left 1s ease-out, right 1s ease-out;
+
+    header{
+      margin-top: -$layout_unit*4;
+      height: $layout_unit*2;
+      background: #0B416E;
+      color: #FFFFFF;
+      line-height: $layout_unit*2;
+      text-align: center;
+
+      a{
+        display: block;
+        height: $layout_unit*2;
+        width: $layout_unit*2;
+        line-height: $layout_unit*2;
+        color: inherit;
+        font-size: 140%;
+
+        &.menu_toggle{
+          float: left;
+        }
+
+        &.user_toggle{
+          float: right;
+        }
+      }
+    }
+    nav{
+      height: $layout_unit*2;
+      background: #D1CDCA;
+      color: #EAEAEA;
+      line-height: $layout_unit*2;
+
+      a{
+        color: inherit;
+      }
+    }
+    article{
+      height: 100%;
+      background: #FFFFFF;
+      color: #3C3C3B;
+    }
+  }
+
+  #user{
+    position: absolute;
+    width: $menu_overlap;
+    height: 100%;
+    top: 0;
+    right: -$menu_overlap;
+    background: #0B416E;
+    color: #FFFFFF;
+    transition: right 1s ease-out;
+
+    a{
+      display: block;
+      color: inherit;
+    }
+  }
+
+  #overlay{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: left 1s ease-out, right 1s ease-out;
+    background: rgba(0,0,0,0.2);
+  }
+
+  &.menu{
+    #menu{
+      left: 0;
+    }
+    #content{
+      left: $menu_overlap;
+    }
+    #overlay{
+      display: block;
+      left: $menu_overlap;
+    }
+  }
+
+  &.user{
+    #user{
+      right: 0;
+    }
+    #content{
+      right: $menu_overlap;
+    }
+    #overlay{
+      display: block;
+      right: $menu_overlap;
+    }
+  }
+}
+
+/*TEMP*/
 body{
+  background: #333;
+
+  #main{
+    max-width: 320px;
+    margin: 0 auto;
+    //background: grey;
+
+    //#menu{
+    //  background: indianred;
+    //}
+    //#content{
+    //  background: lightyellow;
+    //}
+    //#user{
+    //  background: darkorange;
+    //}
+  }
 }
