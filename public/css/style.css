@@ -1356,18 +1356,35 @@ a {
     left: -85%;
     background: #0b416e;
     color: white;
-    transition: left 0.5s ease-out; }
-    #main #menu a {
-      display: block;
-      color: inherit; }
+    transition: left 0.5s ease-out;
+    padding-top: 140px; }
+    #main #menu header {
+      position: absolute;
+      top: 0;
+      height: 140px;
+      width: 100%;
+      text-align: center; }
+    #main #menu nav {
+      height: 100%;
+      background: #3c678b; }
+      #main #menu nav a {
+        display: block;
+        color: inherit;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        border-bottom: 1px solid #0b416e; }
   #main #content {
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-top: 80px;
+    padding: 40px 0;
     transition: left 0.5s ease-out, right 0.5s ease-out; }
     #main #content header {
-      margin-top: -80px;
+      position: absolute;
+      top: 0;
+      width: 100%;
       height: 40px;
       background: #0b416e;
       color: white;
@@ -1382,20 +1399,42 @@ a {
         font-size: 140%; }
         #main #content header a.menu_toggle {
           float: left; }
-        #main #content header a.user_toggle {
+        #main #content header a.aside_toggle {
           float: right; }
-    #main #content nav {
+    #main #content #context_menu {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
       height: 40px;
       background: #d1cdca;
       color: #eaeaea;
       line-height: 40px; }
-      #main #content nav a {
-        color: inherit; }
+      #main #content #context_menu a {
+        display: none;
+        width: 100%;
+        color: inherit;
+        border-bottom: 1px solid #eaeaea;
+        padding: 0 10px; }
+        #main #content #context_menu a.primary {
+          display: block;
+          padding-right: 10px; }
+        #main #content #context_menu a.toggle {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          text-align: center;
+          padding: 0; }
+      #main #content #context_menu.show {
+        height: auto; }
+        #main #content #context_menu.show a {
+          display: block; }
     #main #content article {
       height: 100%;
       background: white;
       color: #3c3c3b; }
-  #main #user {
+  #main #aside {
     position: absolute;
     width: 85%;
     height: 100%;
@@ -1404,7 +1443,7 @@ a {
     background: #0b416e;
     color: white;
     transition: right 0.5s ease-out; }
-    #main #user a {
+    #main #aside a {
       display: block;
       color: inherit; }
   #main #overlay {

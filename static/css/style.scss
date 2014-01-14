@@ -38,10 +38,29 @@ a{
     background: #0B416E;
     color: #FFFFFF;
     transition: left $sideview_transition;
+    padding-top: $layout_unit*7;
 
-    a{
-      display: block;
-      color: inherit;
+    header{
+      position: absolute;
+      top: 0;
+      height: $layout_unit*7;
+      width: 100%;
+      text-align: center;
+    }
+
+    nav{
+      height: 100%;
+      background: #3c678b;
+
+      a{
+        display: block;
+        color: inherit;
+        width: 100%;
+        height: $layout_unit*2;
+        line-height: $layout_unit*2;
+        padding: 0 $layout_unit/2;
+        border-bottom: 1px solid #0B416E;
+      }
     }
   }
 
@@ -49,11 +68,13 @@ a{
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-top: $layout_unit*4;
+    padding: $layout_unit*2 0;
     transition: left $sideview_transition, right $sideview_transition;
 
     header{
-      margin-top: -$layout_unit*4;
+      position: absolute;
+      top: 0;
+      width: 100%;
       height: $layout_unit*2;
       background: #0B416E;
       color: #FFFFFF;
@@ -72,19 +93,48 @@ a{
           float: left;
         }
 
-        &.user_toggle{
+        &.aside_toggle{
           float: right;
         }
       }
     }
-    nav{
+    #context_menu{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
       height: $layout_unit*2;
       background: #D1CDCA;
       color: #EAEAEA;
       line-height: $layout_unit*2;
 
       a{
+        display: none;
+        width: 100%;
         color: inherit;
+        border-bottom: 1px solid #EAEAEA;
+        padding: 0 $layout_unit/2;
+
+        &.primary{
+          display: block;
+          padding-right: $layout_unit/2;
+        }
+        &.toggle{
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          text-align: center;
+          padding: 0;
+        }
+      }
+
+      &.show{
+        height: auto;
+
+        a{
+          display: block;
+        }
       }
     }
     article{
@@ -94,7 +144,7 @@ a{
     }
   }
 
-  #user{
+  #aside{
     position: absolute;
     width: $sideview_overlap;
     height: 100%;

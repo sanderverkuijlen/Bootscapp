@@ -16,31 +16,36 @@
 </head>
 <body>
     <div id="main" class=""> <!-- ng-view -->
-        <nav id="menu">
-            <a href="#">Boodschappen <i class="fa fa-angle-right"></i></a>
-            <a href="#">Likkepot <i class="fa fa-angle-right"></i></a>
-            <a href="#">Snackbar <i class="fa fa-angle-right"></i></a>
-        </nav>
+        <section id="menu">
+            <header>
+                <a href="#"><i class="fa fa-pencil"></i></a>
+                <img src="http://www.gravatar.com/avatar/43f21357e2c8b2d5903a97a2fc114bb8">
+                <a href="#"><i class="fa fa-sign-out"></i></a>
+                <p>Sander Verkuijlen</p>
+            </header>
+            <nav>
+                <a href="#">Boodschappen <i class="fa fa-angle-right"></i></a>
+                <a href="#">Likkepot <i class="fa fa-angle-right"></i></a>
+                <a href="#">Snackbar <i class="fa fa-angle-right"></i></a>
+            </nav>
+        </section>
         <section id="content">
             <header>
                 <a href="#" onclick="document.getElementById('main').className = 'menu';" class="menu_toggle fa fa-bars"></a>
                 Bootscapp
-                <a href="#" onclick="document.getElementById('main').className = 'user';" class="user_toggle fa fa-user"></a>
+                <!--<a href="#" onclick="document.getElementById('main').className = 'aside';" class="aside_toggle fa fa-user"></a>-->
             </header>
-            <nav>
-                <a href="#" class="toggle"><i class="fa fa-angle-down"></i></a>
-                <a href="#" class="main"><i class="fa fa-plus"></i> Item toevoegen</a>
-                <a href="#"><i class="fa fa-times"></i> Afgevinkte items verwijderen</a>
-            </nav>
             <article>
                 TODO: boodschappenlijst
             </article>
+            <nav id="context_menu">
+                <a href="#" class="toggle" onclick="(document.getElementById('context_menu').className != 'show' ? document.getElementById('context_menu').className = 'show' : document.getElementById('context_menu').className = '');"><i class="fa fa-angle-down"></i></a>
+                <a href="#" class="primary"><i class="fa fa-plus"></i> Item toevoegen</a>
+                <a href="#"><i class="fa fa-phone"></i> Call 012 345 67 89</a>
+                <a href="#"><i class="fa fa-times"></i> Afgevinkte items verwijderen</a>
+            </nav>
         </section>
         <aside id="user">
-            <img src="">
-            <span>Sander Verkuijlen</span>
-            <a href="#">Profiel <i class="fa fa-angle-right"></i></a>
-            <a href="#">Uitloggen <i class="fa fa-sign-out"></i></a>
         </aside>
         <div id="overlay" onclick="document.getElementById('main').className = '';">
         </div>
