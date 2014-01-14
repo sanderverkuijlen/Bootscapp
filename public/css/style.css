@@ -1465,11 +1465,11 @@ a {
     left: 85%;
     right: auto;
     background: rgba(0, 0, 0, 0.2); }
-  #main.user #user {
+  #main.aside #aside {
     right: 0; }
-  #main.user #content {
+  #main.aside #content {
     right: 85%; }
-  #main.user #overlay {
+  #main.aside #overlay {
     top: 0;
     right: 85%;
     left: auto;
