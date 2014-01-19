@@ -4,12 +4,6 @@
   "version": "0.0.1",
   "author": "Sander Verkuijlen <sanderverkuijlen@gmail.com>",
   "description": "A fairly simply app built in order to learn and practice with NodeJS, MongoDB, AngularJS and various plugins.",
-  "contributors": [
-    {
-      "name": "Marak Squires",
-      "email": "marak@nodejitsu.com"
-    }
-  ],
   "scripts": {
     "start": "node index.js"
   },
@@ -18,8 +12,12 @@
     "url": "https://github.com/sanderverkuijlen/Bootscapp.git"
   },
   "dependencies": {
-    "express": "~3.4.7",
-    "node-sass": "~0.7.0",
-    "connect-assetmanager": "0.0.28"
+    "express": "~3.4.7"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.3.0",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-concat": "~0.3.0"
   }
 }

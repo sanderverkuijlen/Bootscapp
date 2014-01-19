@@ -5,8 +5,6 @@ var express = require('express');
 //var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var sass = require("node-sass");
-var assetManager = require('connect-assetmanager');
 
 var app = express();
 
@@ -24,53 +22,7 @@ app.set('port', process.env.PORT || 8001);
 //app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Javascript automatisch samenvoegen en optimalizeren
-app.use(assetManager({
-    services: {
-        route: new RegExp('/js/services\.js'),
-        path: path.join(__dirname, 'static/js/services/'),
-        dataType: 'javascript',
-        files: [ '*' ],
-        debug: ('development' == app.get('env'))
-    },
-    directives: {
-        route: new RegExp('/js/directives\.js'),
-        path: path.join(__dirname, 'static/js/directives/'),
-        dataType: 'javascript',
-        files: [ '*' ],
-        debug: ('development' == app.get('env'))
-    },
-    filters: {
-        route: new RegExp('/js/filters\.js'),
-        path: path.join(__dirname, 'static/js/filters/'),
-        dataType: 'javascript',
-        files: [ '*' ],
-        debug: ('development' == app.get('env'))
-    },
-    controllers: {
-        route: new RegExp('/js/controllers\.js'),
-        path: path.join(__dirname, 'static/js/controllers/'),
-        dataType: 'javascript',
-        files: [ '*' ],
-        debug: ('development' == app.get('env'))
-    },
-    app: {
-        route: new RegExp('/js/app\.js'),
-        path: path.join(__dirname, 'static/js/'),
-        dataType: 'javascript',
-        files: [ '*' ],
-        debug: ('development' == app.get('env'))
-    }
-}));
-
-//SASS files automatisch compilen en optimalizeren
-app.use(sass.middleware({
-    src: path.join(__dirname, 'static'),
-    dest: path.join(__dirname, 'public'),
-    debug: ('development' == app.get('env'))
-}));
-
-// development only
+//Development only
 if('development' == app.get('env')){
     app.use(express.errorHandler());
 }
