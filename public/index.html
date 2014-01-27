@@ -8,26 +8,23 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
-<body>
-    <div id="main" class=""> <!-- ng-view -->
+<body ng-controller="AppController">
+    <div id="main" ng-class="{menu: menu}"> <!-- ng-view -->
         <section id="menu">
             <header>
                 <a href="#"><i class="fa fa-pencil"></i></a>
-                <img src="http://www.gravatar.com/avatar/43f21357e2c8b2d5903a97a2fc114bb8">
-                <a href="#"><i class="fa fa-sign-out"></i></a>
-                <p>Sander Verkuijlen</p>
+                <img src="http://www.gravatar.com/avatar/43f21357e2c8b2d5903a97a2fc114bb8" ng-init="login()">
+                <a href="javascript:" ng-click="logout()"><i class="fa fa-sign-out"></i></a>
+                <p>{{user.name}}</p>
             </header>
-            <nav>
-                <a href="#">Boodschappen <i class="fa fa-angle-right"></i></a>
-                <a href="#">Likkepot <i class="fa fa-angle-right"></i></a>
-                <a href="#">Snackbar <i class="fa fa-angle-right"></i></a>
+            <nav ng-controller="ListController">
+                <a href="javascript:" ng-repeat="list in lists">{{list.name}} <i class="fa fa-angle-right"></i></a>
             </nav>
         </section>
         <section id="content">
             <header>
-                <a href="#" onclick="document.getElementById('main').className = 'menu';" class="menu_toggle fa fa-bars"></a>
+                <a href="javascript:" ng-click="showMenu()" class="menu_toggle fa fa-bars"></a>
                 Bootscapp
-                <a href="#" onclick="document.getElementById('main').className = 'aside';" class="aside_toggle fa fa-pencil"></a>
             </header>
             <article>
                 TODO: boodschappenlijst
@@ -41,7 +38,7 @@
         </section>
         <aside id="aside">
         </aside>
-        <div id="overlay" onclick="document.getElementById('main').className = '';">
+        <div id="overlay" ng-click="hideMenu()" >
         </div>
     </div>
 

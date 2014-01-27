@@ -26,21 +26,15 @@ module.exports = function(grunt) {
         watch: {
             uglify: {
                 files: ['static/app/js/**/*.js'],
-                tasks: ['uglify'],
-                options: {
-                }
+                tasks: ['uglify']
             },
             concat: {
                 files: ['static/vendor/angular.min.js'],
-                tasks: ['concat'],
-                options: {
-                }
+                tasks: ['concat']
             },
             sass: {
                 files: ['static/app/css/style.scss'],
-                tasks: ['sass'],
-                options: {
-                }
+                tasks: ['sass']
             }
         }
     });

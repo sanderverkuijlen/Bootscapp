@@ -50,7 +50,7 @@ a{
 
     nav{
       height: 100%;
-      background: #3c678b;
+      //background: #3c678b;
 
       a{
         display: block;
@@ -59,7 +59,7 @@ a{
         height: $layout_unit*2;
         line-height: $layout_unit*2;
         padding: 0 $layout_unit/2;
-        border-bottom: 1px solid #0B416E;
+        //border-bottom: 1px solid #0B416E;
       }
     }
   }
@@ -69,7 +69,8 @@ a{
     height: 100%;
     width: 100%;
     padding: $layout_unit*2 0;
-    transition: left $sideview_transition, right $sideview_transition;
+    left: 0;
+    transition: left $sideview_transition;
 
     header{
       position: absolute;
@@ -88,13 +89,10 @@ a{
         line-height: $layout_unit*2;
         color: inherit;
         font-size: 140%;
+        position: absolute;
 
         &.menu_toggle{
           float: left;
-        }
-
-        &.aside_toggle{
-          float: right;
         }
       }
     }
@@ -144,22 +142,6 @@ a{
     }
   }
 
-  #aside{
-    position: absolute;
-    width: $sideview_overlap;
-    height: 100%;
-    top: 0;
-    right: -$sideview_overlap;
-    background: #0B416E;
-    color: #FFFFFF;
-    transition: right $sideview_transition;
-
-    a{
-      display: block;
-      color: inherit;
-    }
-  }
-
   #overlay{
     display: block;
     position: absolute;
@@ -167,8 +149,7 @@ a{
     width: 100%;
     top: 100%;
     left: 0;
-    right: 0;
-    transition: left $sideview_transition, right $sideview_transition, background $sideview_transition;
+    transition: left $sideview_transition, background $sideview_transition;
     background: rgba(0,0,0,0);
   }
 
@@ -182,22 +163,6 @@ a{
     #overlay{
       top: 0;
       left: $sideview_overlap;
-      right: auto;
-      background: rgba(0,0,0,0.2);
-    }
-  }
-
-  &.aside{
-    #aside{
-      right: 0;
-    }
-    #content{
-      right: $sideview_overlap;
-    }
-    #overlay{
-      top: 0;
-      right: $sideview_overlap;
-      left: auto;
       background: rgba(0,0,0,0.2);
     }
   }

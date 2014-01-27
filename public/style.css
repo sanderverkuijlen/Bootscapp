@@ -1405,22 +1405,21 @@ a {
       width: 100%;
       text-align: center; }
     #main #menu nav {
-      height: 100%;
-      background: #3c678b; }
+      height: 100%; }
       #main #menu nav a {
         display: block;
         color: inherit;
         width: 100%;
         height: 40px;
         line-height: 40px;
-        padding: 0 10px;
-        border-bottom: 1px solid #0B416E; }
+        padding: 0 10px; }
   #main #content {
     position: absolute;
     height: 100%;
     width: 100%;
     padding: 40px 0;
-    transition: left 0.5s ease-out, right 0.5s ease-out; }
+    left: 0;
+    transition: left 0.5s ease-out; }
     #main #content header {
       position: absolute;
       top: 0;
@@ -1436,11 +1435,10 @@ a {
         width: 40px;
         line-height: 40px;
         color: inherit;
-        font-size: 140%; }
+        font-size: 140%;
+        position: absolute; }
         #main #content header a.menu_toggle {
           float: left; }
-        #main #content header a.aside_toggle {
-          float: right; }
     #main #content #context_menu {
       position: absolute;
       bottom: 0;
@@ -1474,18 +1472,6 @@ a {
       height: 100%;
       background: #FFFFFF;
       color: #3C3C3B; }
-  #main #aside {
-    position: absolute;
-    width: 85%;
-    height: 100%;
-    top: 0;
-    right: -85%;
-    background: #0B416E;
-    color: #FFFFFF;
-    transition: right 0.5s ease-out; }
-    #main #aside a {
-      display: block;
-      color: inherit; }
   #main #overlay {
     display: block;
     position: absolute;
@@ -1493,8 +1479,7 @@ a {
     width: 100%;
     top: 100%;
     left: 0;
-    right: 0;
-    transition: left 0.5s ease-out, right 0.5s ease-out, background 0.5s ease-out;
+    transition: left 0.5s ease-out, background 0.5s ease-out;
     background: rgba(0, 0, 0, 0); }
   #main.menu #menu {
     left: 0; }
@@ -1503,16 +1488,6 @@ a {
   #main.menu #overlay {
     top: 0;
     left: 85%;
-    right: auto;
-    background: rgba(0, 0, 0, 0.2); }
-  #main.aside #aside {
-    right: 0; }
-  #main.aside #content {
-    right: 85%; }
-  #main.aside #overlay {
-    top: 0;
-    right: 85%;
-    left: auto;
     background: rgba(0, 0, 0, 0.2); }
 
 /*TEMP*/
