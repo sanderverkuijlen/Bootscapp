@@ -9,8 +9,9 @@ $sideview_transition: 0.5s ease-out;
 
 //Global styles
 *{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 17px;
+  //font-family: Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
 }
 
 html, body {
@@ -35,7 +36,7 @@ a{
     height: 100%;
     top: 0;
     left: -$sideview_overlap;
-    background: #0B416E;
+    background: #35363A;
     color: #FFFFFF;
     transition: left $sideview_transition;
     padding-top: $layout_unit*7;
@@ -59,6 +60,8 @@ a{
         height: $layout_unit*2;
         line-height: $layout_unit*2;
         padding: 0 $layout_unit/2;
+        font-weight: 200;
+        background: url('/img/link_icon.png') no-repeat center right;
         //border-bottom: 1px solid #0B416E;
       }
     }
@@ -77,10 +80,11 @@ a{
       top: 0;
       width: 100%;
       height: $layout_unit*2;
-      background: #0B416E;
+      background: #35363A;
       color: #FFFFFF;
       line-height: $layout_unit*2;
       text-align: center;
+      font-weight: 200;
 
       a{
         display: block;
@@ -88,57 +92,59 @@ a{
         width: $layout_unit*2;
         line-height: $layout_unit*2;
         color: inherit;
-        font-size: 140%;
+        font-size: 120%;
         position: absolute;
 
         &.menu_toggle{
           float: left;
+          background: url('/img/menu_icon.png') no-repeat center center;
         }
       }
     }
     #context_menu{
+      font-size: 0%;
       position: absolute;
       bottom: 0;
       width: 100%;
       height: $layout_unit*2;
-      background: #D1CDCA;
-      color: #EAEAEA;
-      line-height: $layout_unit*2;
+      //line-height: $layout_unit*2;
+      background: #F1F3F4;
 
       a{
-        display: none;
-        width: 100%;
-        color: inherit;
-        border-bottom: 1px solid #EAEAEA;
-        padding: 0 $layout_unit/2;
+        text-align: center;
+        color: #35363A;
+        line-height: $layout_unit*2;
+        font-size: 100%;
+        display: inline-block;
+        height: $layout_unit*2;
+        width: 33.33%;
 
-        &.primary{
-          display: block;
-          padding-right: $layout_unit/2;
+        span{
+          display: none;
         }
-        &.toggle{
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 40px;
-          text-align: center;
-          padding: 0;
+
+        &.add-btn{
+          background: url('/img/plus_icon.png') no-repeat center center;
         }
-      }
 
-      &.show{
-        height: auto;
-
-        a{
-          display: block;
+        &.remove-btn{
+          background: url('/img/remove_icon.png') no-repeat center center;
         }
       }
     }
     article{
       height: 100%;
-      background: #FFFFFF;
-      color: #3C3C3B;
+      background: #F1F3F4;
+      color: #35363A;
+
+      ul{
+        //padding: $layout_unit/2;
+
+        li{
+          background: #FFFFFF;
+          margin-bottom: 1px;
+        }
+      }
     }
   }
 

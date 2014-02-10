@@ -1373,8 +1373,8 @@ table {
   content: "\f196"; }
 
 * {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 17px; }
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px; }
 
 html, body {
   height: 100%;
@@ -1394,7 +1394,7 @@ a {
     height: 100%;
     top: 0;
     left: -85%;
-    background: #0B416E;
+    background: #35363A;
     color: #FFFFFF;
     transition: left 0.5s ease-out;
     padding-top: 140px; }
@@ -1412,7 +1412,9 @@ a {
         width: 100%;
         height: 40px;
         line-height: 40px;
-        padding: 0 10px; }
+        padding: 0 10px;
+        font-weight: 200;
+        background: url("/img/link_icon.png") no-repeat center right; }
   #main #content {
     position: absolute;
     height: 100%;
@@ -1425,53 +1427,50 @@ a {
       top: 0;
       width: 100%;
       height: 40px;
-      background: #0B416E;
+      background: #35363A;
       color: #FFFFFF;
       line-height: 40px;
-      text-align: center; }
+      text-align: center;
+      font-weight: 200; }
       #main #content header a {
         display: block;
         height: 40px;
         width: 40px;
         line-height: 40px;
         color: inherit;
-        font-size: 140%;
+        font-size: 120%;
         position: absolute; }
         #main #content header a.menu_toggle {
-          float: left; }
+          float: left;
+          background: url("/img/menu_icon.png") no-repeat center center; }
     #main #content #context_menu {
+      font-size: 0%;
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 40px;
-      background: #D1CDCA;
-      color: #EAEAEA;
-      line-height: 40px; }
+      background: #F1F3F4; }
       #main #content #context_menu a {
-        display: none;
-        width: 100%;
-        color: inherit;
-        border-bottom: 1px solid #EAEAEA;
-        padding: 0 10px; }
-        #main #content #context_menu a.primary {
-          display: block;
-          padding-right: 10px; }
-        #main #content #context_menu a.toggle {
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 40px;
-          text-align: center;
-          padding: 0; }
-      #main #content #context_menu.show {
-        height: auto; }
-        #main #content #context_menu.show a {
-          display: block; }
+        text-align: center;
+        color: #35363A;
+        line-height: 40px;
+        font-size: 100%;
+        display: inline-block;
+        height: 40px;
+        width: 33.33%; }
+        #main #content #context_menu a span {
+          display: none; }
+        #main #content #context_menu a.add-btn {
+          background: url("/img/plus_icon.png") no-repeat center center; }
+        #main #content #context_menu a.remove-btn {
+          background: url("/img/remove_icon.png") no-repeat center center; }
     #main #content article {
       height: 100%;
-      background: #FFFFFF;
-      color: #3C3C3B; }
+      background: #F1F3F4;
+      color: #35363A; }
+      #main #content article ul li {
+        background: #FFFFFF;
+        margin-bottom: 1px; }
   #main #overlay {
     display: block;
     position: absolute;

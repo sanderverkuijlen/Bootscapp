@@ -5,7 +5,7 @@
 
     <title>Bootscapp</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body ng-controller="AppController">
@@ -18,26 +18,27 @@
                 <p>{{user.name}}</p>
             </header>
             <nav ng-controller="ListController">
-                <a href="javascript:" ng-repeat="list in lists">{{list.name}} <i class="fa fa-angle-right"></i></a>
+                <a href="javascript:" ng-repeat="list in lists">{{list.name}}</a>
             </nav>
         </section>
-        <section id="content">
+        <section id="content" ng-controller="ItemController">
             <header>
-                <a href="javascript:" ng-click="showMenu()" class="menu_toggle fa fa-bars"></a>
+                <a href="javascript:" ng-click="showMenu()" class="menu_toggle"></a>
                 Bootscapp
             </header>
             <article>
-                TODO: boodschappenlijst
+                <ul>
+                   <li ng-repeat="item in items">
+                       {{item.name}} {{item.amount}} {{item.checked}}
+                   </li>
+                </ul>
             </article>
             <nav id="context_menu">
-                <a href="#" class="toggle" onclick="(document.getElementById('context_menu').className != 'show' ? document.getElementById('context_menu').className = 'show' : document.getElementById('context_menu').className = '');"><i class="fa fa-angle-down"></i></a>
-                <a href="#" class="primary"><i class="fa fa-plus"></i> Item toevoegen</a>
-                <a href="#"><i class="fa fa-phone"></i> Call 012 345 67 89</a>
-                <a href="#"><i class="fa fa-times"></i> Afgevinkte items verwijderen</a>
+                <a href="#" class="add-btn">Item toevoegen</a>
+                <a href="#">Phone</a>
+                <a href="#" class="remove-btn">Afgevinkte items verwijderen</a>
             </nav>
         </section>
-        <aside id="aside">
-        </aside>
         <div id="overlay" ng-click="hideMenu()" >
         </div>
     </div>
